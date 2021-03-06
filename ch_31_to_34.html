@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>JS Assignment ch_31_to_34
+</head>
+<body>
+    <script>
+        var name = prompt("Type Your Name");
+        var day = prompt("Type Your DOB (date)");
+        var month = prompt("Type Your DOB (month)");
+        var year = prompt("Type Your DOB (year)");
+
+        var now = new Date();
+        var hr = now.getHours();
+
+        if (hr >= 5 && hr < 12) {
+            console.log("Hello " + name + " Good Morning!");
+        } else if (hr >= 12 && hr <= 17) {
+            console.log("Hello " + name + " Good Afternoon!");
+        } else if (hr > 17 && hr <20) {
+            console.log("Hello " + name + " Good Evening!");
+        } else {
+            console.log("Hello " + name + " Good Night!");
+        }
+
+        var dob = new Date(year, month - 1, day);
+        console.log("your DoB is " + dob);
+        
+        var age = now.getFullYear() - parseInt(year);
+        console.log("you are " + age + " years old");
+        var msDiff = now.getTime() - dob.getTime();
+        console.log("Your Age in Days", Math.floor(msDiff / (1000 * 60 * 60 * 24)));
+        console.log("Your Age in Hours", Math.floor(msDiff / (1000 * 60 * 60)));
+
+        if (now.getMonth() == (month - 1) && now.getDate() == day) {
+            console.log("happy Birth Day " + name);
+        }
+        else {
+            nxt_bday = new Date(now.getFullYear(), month - 1, day);
+            if( now.getTime() > nxt_bday.getTime()) {
+                nxt_bday.setFullYear(nxt_bday.getFullYear()+1);
+            }
+            diff = nxt_bday.getTime()-now.getTime();
+            console.log("Your birthday Duration Days ", Math.floor(diff/(1000*60*60*24)+1));
+        }
+    </script>
+</body>
+</html>
