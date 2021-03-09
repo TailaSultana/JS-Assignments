@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment #2 of ch_35_to_38</title>
+</head>
+<body>
+    <script>
+        var inputNumber = parseInt(prompt("Factorialize a number"));
+        console.log(factorialize(inputNumber));
+    
+        function factorialize(num) {
+             var fact = 1;
+
+            if (num != 0) {
+               for(var i=num; i>1; i--) {
+                    fact = fact * i;
+                }
+            }
+                return fact; 
+            
+        }
+
+       
+    </script>
+    
+</body>
+</html>
